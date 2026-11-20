@@ -1,1 +1,2 @@
+// Declares the Windows resources compiled into the guitaar executable.
 101 ICON "gaster.ico"

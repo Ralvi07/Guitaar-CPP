@@ -1,3 +1,4 @@
+// Implements the native Windows inventory manager and connects its windows to inventory and storage operations.
 #ifndef UNICODE
 #define UNICODE
 #endif

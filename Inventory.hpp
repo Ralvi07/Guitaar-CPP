@@ -1,3 +1,4 @@
+// Defines the inventory records and operations shared by the native application's interface and storage code.
 #pragma once
 
 #include <algorithm>
@@ -127,6 +128,7 @@ public:
     }
 };
 
+// Read the legacy Java storage format into the native inventory model.
 inline Inventory importJava(const fs::path& path) {
     LegacyReader in(path);
     Inventory data;

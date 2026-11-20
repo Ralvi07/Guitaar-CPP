@@ -1,3 +1,4 @@
+// Serializes the native inventory to disk and reconstructs its records when loading.
 #pragma once
 #include "Inventory.hpp"
 
@@ -32,6 +33,7 @@ void readRows(Stream& stream, std::vector<Row>& rows, Fields fields) {
     }
 }
 
+// Read the saved rows into the corresponding inventory collections.
 inline Inventory loadInventory(const fs::path& path) {
     Inventory data;
     if (!fs::exists(path)) return data;
@@ -62,6 +64,7 @@ inline Inventory loadInventory(const fs::path& path) {
     return data;
 }
 
+// Write the replacement separately so a failed save can leave the existing file intact.
 inline void replaceFile(const fs::path& path, auto write) {
     fs::create_directories(path.parent_path());
     auto temporary = path;
